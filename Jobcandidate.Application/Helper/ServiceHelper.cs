@@ -1,4 +1,6 @@
-﻿namespace Jobcandidate.Application;
+﻿using Jobcandidate.Domain;
+
+namespace Jobcandidate.Application;
 
 public static class ServiceHelper
 {

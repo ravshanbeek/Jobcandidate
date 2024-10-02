@@ -1,19 +1,36 @@
-﻿using Jobcandidate.Shared;
+﻿using Jobcandidate.Application;
+using Jobcandidate.Shared;
 using Microsoft.EntityFrameworkCore;
 
-namespace Jobcandidate.Api.Extentions;
-
-public static class DataExtentions
+namespace Jobcandidate.Api.Extensions
 {
-    public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
-        => services.AddDbContext<JobCandidateContext>(
-            options => options.UseNpgsql(configuration.GetConnectionString("Jobcandidate")));
-
-    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    public static class DataExtensions
     {
-        services.AddScoped<ICandidateRepository, CandidateRepository>();
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        // This extension method adds the DbContext to the service collection using a connection string from configuration
+        public static IServiceCollection AddJobCandidateDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<JobCandidateContext>(options =>
+                options.UseNpgsql(configuration.GetConnectionString("Jobcandidate")));
 
-        return services;
+            return services;
+        }
+
+        // This extension method registers the repositories and the UnitOfWork with scoped lifetime
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<ICandidateRepository, CandidateRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            return services;
+        }
+
+        // This extension method registers the application services (like CandidateService)
+        public static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            services.AddScoped<ICandidateService, CandidateService>();
+            services.AddAutoMapper(typeof(MapperProfiler));
+
+            return services;
+        }
     }
 }

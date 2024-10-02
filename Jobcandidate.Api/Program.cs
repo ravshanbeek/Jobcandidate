@@ -1,4 +1,4 @@
-using Jobcandidate.Api.Extentions;
+using Jobcandidate.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext(builder.Configuration);
+builder.Services.AddJobCandidateDbContext(builder.Configuration)
+    .AddServices()
+    .AddRepositories();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

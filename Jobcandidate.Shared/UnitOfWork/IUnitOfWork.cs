@@ -3,9 +3,8 @@ using System.Data;
 
 namespace Jobcandidate.Shared;
 
-public interface IUnitOfWork : IDbTransaction
+public interface IUnitOfWork : IDbContextTransactionManager
 {
     ICandidateRepository CandidateRepository { get; }
     Task SaveChangesAsync();
-    Task<IDbContextTransaction> BeginTransactionAsync();
 }
