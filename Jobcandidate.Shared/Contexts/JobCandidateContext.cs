@@ -17,4 +17,11 @@ public class JobCandidateContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Candidate>()
+            .HasIndex(c => c.Email)
+            .IsUnique();
+    }
 }
