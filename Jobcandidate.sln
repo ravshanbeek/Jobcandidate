@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobcandidate.Shared", "Jobc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobcandidate.Application", "Jobcandidate.Application\Jobcandidate.Application.csproj", "{C15123FD-B47B-4518-A732-720FAB9989F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobcandidate.Tests", "Jobcandidate.Tests\Jobcandidate.Tests.csproj", "{96B267D0-B0E2-4911-BBAE-A1A01469F0E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C15123FD-B47B-4518-A732-720FAB9989F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C15123FD-B47B-4518-A732-720FAB9989F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C15123FD-B47B-4518-A732-720FAB9989F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B267D0-B0E2-4911-BBAE-A1A01469F0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B267D0-B0E2-4911-BBAE-A1A01469F0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B267D0-B0E2-4911-BBAE-A1A01469F0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B267D0-B0E2-4911-BBAE-A1A01469F0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
