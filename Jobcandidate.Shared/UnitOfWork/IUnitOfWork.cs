@@ -7,4 +7,5 @@ public interface IUnitOfWork : IDbTransaction
 {
     ICandidateRepository CandidateRepository { get; }
     Task SaveChangesAsync();
+    Task<IDbContextTransaction> BeginTransactionAsync();
 }

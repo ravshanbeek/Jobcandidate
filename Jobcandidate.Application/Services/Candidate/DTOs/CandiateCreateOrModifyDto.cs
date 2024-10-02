@@ -1,12 +1,10 @@
-﻿namespace Jobcandidate.Domain;
+﻿using System.ComponentModel.DataAnnotations;
 
-using System.ComponentModel.DataAnnotations;
+namespace Jobcandidate.Application;
 
-public class Candidate : Auditable
+public class CandiateCreateOrModifyDto
 {
-
     [Required]
-    [MaxLength(50)]
     public string FirstName { get; set; }
 
     [Required]
@@ -14,24 +12,21 @@ public class Candidate : Auditable
     public string LastName { get; set; }
 
     [Phone]
-    public string? PhoneNumber { get; set; }
+    public string PhoneNumber { get; set; }
 
     [Required]
     [EmailAddress]
     public string Email { get; set; }
 
     [MaxLength(100)]
-    public string? LinkedInProfile { get; set; }
+    public string LinkedInProfile { get; set; }
 
     [MaxLength(100)]
-    public string? GitHubProfile { get; set; }
+    public string GitHubProfile { get; set; }
 
     [Required]
     public string Comments { get; set; }
-
-    [MaxLength(250)]
+    public int? PreferWay { get; set; }
     public string? CallTimeInterval { get; set; }
-
-    public PreferWay? PreferWay { get; set; }
 
 }
